@@ -1,0 +1,28 @@
+<section>Éditable <input type="checkbox" [(ngModel)]="estGlobalEditable">
+</section>
+<section class="liste">
+    <app-details-produit *ngFor="let unProduit of produits" [produit]="unProduit" [estEditable]="estGlobalEditable"></app-details-produit>
+</section>
+
+<mat-table [dataSource]="produits">
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Identifiant </mat-header-cell>
+        <mat-cell *matCellDef="let unProduit"> {{unProduit.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="nom">
+        <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>>
+        <mat-cell *matCellDef="let unProduit"> {{unProduit.nom}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let unProduit"> {{unProduit.description}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="fabricant">
+        <mat-header-cell *matHeaderCellDef> Fabricant </mat-header-cell>
+        <mat-cell *matCellDef="let unProduit"> {{unProduit.fabricant}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="colonnesAffichees"></mat-header-row>
+    <mat-row *matRowDef="let myRowData; columns: colonnesAffichees"></mat-row>
+</mat-table>
+

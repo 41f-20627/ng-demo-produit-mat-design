@@ -1,0 +1,27 @@
+<article *ngIf="estEditable; else nonEditable">
+        <mat-form-field>
+            <mat-label>Nom : </mat-label><input [(ngModel)]="produit.nom" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="warn">
+            <mat-label>Description :</mat-label> <textarea matInput [(ngModel)]="produit.description"></textarea>
+        </mat-form-field>
+</article>
+
+<ng-template #nonEditable>
+    <mat-card class="carte-produit">
+        <mat-card-header>
+          <mat-card-title>{{produit?.nom}}</mat-card-title>
+          <mat-card-subtitle>{{produit?.fabricant}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://via.placeholder.com/250" alt="Photo d'un produit">
+        <mat-card-content>
+          <p>
+            {{produit?.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Modifier</button>
+          <button mat-button><mat-icon>delete</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+</ng-template>

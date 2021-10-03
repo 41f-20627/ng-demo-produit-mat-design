@@ -1,0 +1,18 @@
+.basPrix{
+    color: green;
+    background-color: hotpink;
+}
+
+.hautPrix{
+    color: red;
+    background-color:mediumaquamarine;
+}
+:host{
+    padding-top: 128px;
+    display: flex;
+    flex-wrap: wrap;
+    .liste{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

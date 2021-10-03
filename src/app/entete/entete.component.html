@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <a mat-icon-button routerLink = "/"><mat-icon>home</mat-icon></a>
+        <span>Produit...</span>
+        <span class="filler"></span>
+        <nav>
+            <a mat-button routerLink = "/"><span>Accueil</span></a>
+            <a mat-button routerLink = "/produit">Liste des produits</a>
+        </nav>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <span class="filler"></span>
+        <section>
+            Se connecter : <input type="checkbox" [(ngModel)]="estConnecte" (change)="changement()">       
+        </section>
+    </mat-toolbar-row>
+</mat-toolbar>
+    
+    
+
